@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.davidrosenstein.hci.TMC.Controllers.MainController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.davidrosenstein.hci.TMC.Controllers.MainController">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -27,17 +27,17 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" text="Not Implemented" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem mnemonicParsing="false" text="Not Implemented" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="Not Implemented" />
                   </items>
                 </Menu>
               </menus>
@@ -52,15 +52,16 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button fx:id="generateMapButton1" contentDisplay="TOP" mnemonicParsing="false" onAction="#generateMap" text="Generate Map" textAlignment="CENTER">
+                  <Button fx:id="importDataButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#importData" text="Import Data" textAlignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/tmc%20generate%20map%20icon.png" />
+                              <Image url="@../images/tmc%20import%20icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
+                  <Separator orientation="VERTICAL" />
               </items>
                <VBox.margin>
                   <Insets />
@@ -72,13 +73,6 @@
          </children>
       </VBox>
    </top>
-   <center>
-      <Pane BorderPane.alignment="CENTER">
-         <children>
-            <Canvas height="200.0" width="200.0" />
-         </children>
-      </Pane>
-   </center>
    <right>
       <HBox BorderPane.alignment="CENTER">
          <children>
@@ -87,44 +81,55 @@
               <tabs>
                 <Tab text="Stations">
                      <content>
-                        <HBox>
+                        <VBox alignment="TOP_RIGHT" spacing="2.0">
                            <children>
-                              <VBox alignment="TOP_RIGHT" spacing="2.0" HBox.hgrow="ALWAYS">
-                                 <children>
-                                    <Button mnemonicParsing="false" onAction="#addStation" text="Add Station" />
-                                    <ListView fx:id="stationsList" VBox.vgrow="ALWAYS">
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                       </VBox.margin>
-                                    </ListView>
-                                 </children>
-                                 <padding>
-                                    <Insets top="2.0" />
-                                 </padding>
-                              </VBox>
-                              <ScrollBar orientation="VERTICAL" prefHeight="20.0" />
+                              <Button mnemonicParsing="false" onAction="#addStation" text="Add Station">
+                                 <VBox.margin>
+                                    <Insets right="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <ListView fx:id="stationsList" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </ListView>
                            </children>
-                        </HBox>
+                           <padding>
+                              <Insets top="2.0" />
+                           </padding>
+                        </VBox>
                      </content>
                 </Tab>
-                  <Tab text="Stations">
+                  <Tab text="Lines">
                      <content>
-                        <HBox>
+                        <VBox alignment="TOP_RIGHT" spacing="2.0">
                            <children>
-                              <VBox HBox.hgrow="ALWAYS" />
-                              <ScrollBar orientation="VERTICAL" prefHeight="20.0" />
+                              <Button mnemonicParsing="false" onAction="#addLine" text="Add Line">
+                                 <VBox.margin>
+                                    <Insets right="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <ListView fx:id="linesList" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </ListView>
                            </children>
-                        </HBox>
+                           <padding>
+                              <Insets top="2.0" />
+                           </padding>
+                        </VBox>
                      </content>
                   </Tab>
-                  <Tab text="Stations">
+                  <Tab text="POIs">
                      <content>
-                        <HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                     </content>
+                     <content>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <VBox HBox.hgrow="ALWAYS" />
-                              <ScrollBar orientation="VERTICAL" prefHeight="20.0" />
-                           </children>
-                        </HBox>
+                              <Text layoutX="10.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This section is not included in this prototype" />
+                           </children></Pane>
                      </content>
                   </Tab>
               </tabs>
@@ -132,4 +137,7 @@
          </children>
       </HBox>
    </right>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>

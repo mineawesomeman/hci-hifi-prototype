@@ -27,6 +27,7 @@ public class App extends Application {
     App.primaryStage = primaryStage;
     App.primaryStage.setMinHeight(700.0);
     App.primaryStage.setMinWidth(950.0);
+    App.primaryStage.setTitle("Transit Map Creator");
 
     final FXMLLoader loader = new FXMLLoader(App.class.getResource("views/Main.fxml"));
     final BorderPane root = loader.load();

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+
+
+<AnchorPane fx:id="mainPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.davidrosenstein.hci.TMC.Controllers.MapController">
+   <children>
+      <Rectangle fx:id="background" arcHeight="5.0" arcWidth="5.0" fill="#fef2e6" height="400.0" onMouseDragged="#backgroundDrag" onMousePressed="#backgroundStartDrag" onMouseReleased="#backgroundEndDrag" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" />
+      <Line endX="75.0" endY="-80.0" layoutX="221.0" layoutY="158.0" startX="-118.0" startY="42.0" stroke="#ff3818" strokeWidth="10.0" />
+      <Circle fill="WHITE" layoutX="100.0" layoutY="200.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" />
+      <Circle fill="WHITE" layoutX="295.0" layoutY="80.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" />
+   </children>
+</AnchorPane>
