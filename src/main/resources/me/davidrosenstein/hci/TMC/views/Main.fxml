@@ -62,6 +62,51 @@
                      </graphic>
                   </Button>
                   <Separator orientation="VERTICAL" />
+                  <Button contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#importData" text="Line Mover" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/tmc%20no%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#importData" text="Station Mover" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/tmc%20no%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#importData" text="POI Mover" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/tmc%20no%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#importData" text="Symbol Editor" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/tmc%20no%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#importData" text="Legend" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/tmc%20no%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
               </items>
                <VBox.margin>
                   <Insets />

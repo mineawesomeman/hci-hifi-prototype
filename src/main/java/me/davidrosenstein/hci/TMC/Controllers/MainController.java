@@ -99,6 +99,8 @@ public class MainController {
     Button lineDisp = new Button("", buttonContent);
     lineDisp.setOnAction((event) -> editLine(newLine));
     newLine.setConnectedButton(lineDisp);
+    newLine.setConnectedText(lineText);
+    newLine.setConnectedCircle(colorDisp);
 
     lines.add(newLine);
 
@@ -125,13 +127,13 @@ public class MainController {
     pane.setContentText("This feature is not working in this prototype.");
 
     dialog.showAndWait();
-    /*
-    final FXMLLoader loader = new FXMLLoader(App.class.getResource("views/GenMap.fxml"));
-    try {
-      mainPane.setCenter(loader.load());
-    } catch (IOException e) {
-      e.printStackTrace();
-    }*/
+
+//    final FXMLLoader loader = new FXMLLoader(App.class.getResource("views/GenMap.fxml"));
+//    try {
+//      mainPane.setCenter(loader.load());
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
   }
 
   @FXML
